@@ -1,0 +1,184 @@
+
+
+:root {
+    --verde: #315c48;
+    --verde-oscuro: #203f32;
+    --verde-suave: #e7efe9;
+    --crema: #f6f3eb;
+    --blanco: #ffffff;
+    --texto: #26332d;
+    --gris: #6d766f;
+    --borde: #d9e0da;
+    --sombra: rgba(32, 63, 50, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+
+    background:
+        linear-gradient(rgba(246, 243, 235, 0.94), rgba(246, 243, 235, 0.94)),
+        radial-gradient(circle at top right, #dce9df, transparent 45%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+/* Tarjeta principal */
+.form {
+    width: 100%;
+    max-width: 520px;
+    background: var(--blanco);
+    padding: 42px;
+    border-radius: 18px;
+    border: 1px solid rgba(217, 224, 218, 0.8);
+    box-shadow: 0 18px 45px var(--sombra);
+}
+
+/* Identidad del hotel */
+.form::before {
+    content: "HOTEL";
+    display: block;
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Título */
+.form h1 {
+    color: var(--verde-oscuro);
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+/* Detalle decorativo */
+.form h1::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 2px;
+    background: var(--verde);
+    margin: 15px auto 0;
+    border-radius: 10px;
+}
+
+/* Campos */
+.form input {
+    width: 100%;
+    padding: 14px 15px;
+    margin-bottom: 15px;
+
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+
+    background: #fcfcfa;
+    color: var(--texto);
+    font-size: 15px;
+
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.form input::placeholder {
+    color: #929a94;
+}
+
+.form input:focus {
+    border-color: var(--verde);
+    background: var(--blanco);
+    box-shadow: 0 0 0 3px rgba(49, 92, 72, 0.10);
+}
+
+/* Botón */
+.form button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: var(--verde);
+    color: var(--blanco);
+
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form button:hover {
+    background: var(--verde-oscuro);
+    box-shadow: 0 7px 18px rgba(32, 63, 50, 0.18);
+    transform: translateY(-1px);
+}
+
+.form button:active {
+    transform: translateY(0);
+}
+
+/* Firma del hotel */
+.form::after {
+    content: "Puya Raimondii · Hospitalidad y naturaleza";
+    display: block;
+    text-align: center;
+    color: var(--gris);
+    font-size: 11px;
+    margin-top: 24px;
+    letter-spacing: 0.4px;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE
+   ========================================= */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 15px;
+    }
+
+    .form {
+        padding: 30px 22px;
+        border-radius: 15px;
+    }
+
+    .form h1 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 380px) {
+    .form {
+        padding: 25px 18px;
+    }
+
+    .form h1 {
+        font-size: 23px;
+    }
+}
